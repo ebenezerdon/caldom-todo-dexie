@@ -1,5 +1,15 @@
 /*global _ */
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(result => console.log('success=>', result))
+      .catch(error => console.log('error', error))
+  })
+}
+
+_('#taskList', `<h1>hey</h1>` )
+
 const db = new Dexie('TodoApp')
 
 db.version(2).stores({ items: '++id,description,isComplete' })
