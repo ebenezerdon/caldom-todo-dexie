@@ -13,3 +13,7 @@
 .delete-button:active {
     margin-top: 3px;
 }
+
+.strike {
+    text-decoration: line-through;
+}
