@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Todo App with IndexedDb</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script src="https://unpkg.com/caldom"></script>
   </head>
 
   <body>
     <div class="container">
-      <h1>Hello human!</h1>
+      <h1>Hello Human!</h1>
 
       <section>
         <form id="inputForm">
           <div class="form-group">
             <label for="taskInput">New task: </label>
-            <input type="text" id="taskInput" placeholder="Wat' you want to do?">
-            <button type="submit">Add task</button>
+            <input type="text" required id="taskInput" placeholder="Wat' you want to do?">
+            <button type="submit" class="btn">Add task</button>
           </div>
         </form>
       </section>

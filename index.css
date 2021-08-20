@@ -1,0 +1,15 @@
+#inputForm {
+    width: 30rem
+}
+
+#taskList {
+    margin-top: 3rem
+}
+
+.delete-button {
+    cursor: pointer;
+}
+
+.delete-button:active {
+    margin-top: 3px;
+}

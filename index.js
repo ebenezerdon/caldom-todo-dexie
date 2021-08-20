@@ -11,7 +11,22 @@ const taskList = _().react({}, {
     return _(`
       <div>
         ${state.taskData?.map(task => {
-          return `<h1>${task.description}</h1>`
+          return `
+            <div class="row">
+              <div class="col s3">
+                <label>
+                  <input
+                    type="checkbox"
+                    ${task.isComplete && 'checked'}
+                  />
+                  <span class="black-text">${task.description}</span>
+                </label>
+              </div>
+              <i class="col s2 material-icons delete-button">
+                delete
+              </i>
+            </div>
+          `
         }).join('')}
       </div>
     `)
@@ -20,7 +35,7 @@ const taskList = _().react({}, {
 
 _('#taskList', taskList )
 
-db.items.toArray().then(data => taskList.state.taskData = data)
+db.items.reverse().toArray().then(data => taskList.state.taskData = data)
 
 const addItemToDb = async event => {
   event.preventDefault()
@@ -30,7 +45,7 @@ const addItemToDb = async event => {
     isComplete: false
   })
 
-  taskList.state.taskData = await db.items.toArray()
+  taskList.state.taskData = await db.items.reverse().toArray()
   _('#taskInput').val('')
 }
 
